@@ -1,0 +1,14 @@
+#!/bin/bash
+
+URL=/tmp/dropbox-url
+
+while true; do
+	sleep 1;
+	if [ -f $URL ]; then
+		firefox `head -1 $URL` &
+		sleep 1;
+		rm -f $URL
+	else
+		echo "No file"
+	fi
+done
